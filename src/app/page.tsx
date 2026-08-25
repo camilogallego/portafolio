@@ -1,69 +1,30 @@
-import Image from "next/image";
+import { Header } from "@/components/header";
+import { HoverCard, Reveal } from "@/components/motion";
+import { education } from "@/data/education";
+import { experiences, featuredExperiences } from "@/data/experience";
+import { profile } from "@/data/profile";
+import { projects } from "@/data/projects";
+import { skillGroups } from "@/data/skills";
+
+const Arrow = () => <span aria-hidden="true">↗</span>;
 
 export default function Home() {
-  return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+  return <main id="top">
+    <Header />
+    <section className="hero shell" aria-labelledby="hero-title">
+      <div className="hero-orbit" aria-hidden="true"><i /><i /><i /></div>
+      <Reveal className="hero-copy"><p className="eyebrow">{profile.label}</p><div className="hero-identity"><p>{profile.name}</p><span>{profile.role}</span></div><h1 id="hero-title">Construyo la capa<br /><em>que conecta</em> sistemas.</h1><p className="hero-intro">Más de 5 años desarrollando productos digitales para el sector financiero, con foco en React.js, TypeScript y arquitecturas frontend.</p><div className="hero-technologies" aria-label="Especialización técnica">{profile.heroTechnologies.map((technology) => <span key={technology}>{technology}</span>)}</div><div className="hero-actions"><a className="button button-primary" href="#experience">Ver experiencia <Arrow /></a><a className="button button-ghost" href="#contact">Contactarme</a><a className="button button-ghost button-cv" href="/cv/camilo-gallego-cv.pdf" download>Descargar CV <span aria-hidden="true">↓</span></a></div></Reveal>
+      <Reveal className="hero-side"><div className="hero-index"><span>01</span><span>Frontend systems</span></div><div className="signal-card"><div className="signal-top"><span>Frontend / System</span><b>PRODUCTION</b></div><div className="signal-lines"><span /><span /><span /><span /></div><div className="signal-footer"><span>React.js</span><span>TypeScript</span><span>Microfrontends</span></div></div><p className="signal-caption"><span>Galicia</span> · Arquitectura Micro-Frontend</p></Reveal>
+      <div className="hero-foot"><span>Buenos Aires, Argentina</span><a href="#about">Scroll to explore <span>↓</span></a></div>
+    </section>
+    <section className="about shell section" id="about" aria-labelledby="about-title"><Reveal><p className="section-index">01 / Perfil</p></Reveal><Reveal className="about-grid"><h2 id="about-title">Frontend con foco en <em>productos reales.</em></h2><div><p>{profile.summary} Experiencia en Galicia y BBVA, construyendo y evolucionando aplicaciones productivas con React.js, TypeScript y arquitecturas frontend.</p><a className="text-link" href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <Arrow /></a></div></Reveal></section>
+    <section className="section shell" id="experience" aria-labelledby="experience-title"><Reveal><p className="section-index">02 / Trayectoria</p><h2 id="experience-title">Experiencia que<br /><em>llega a producción.</em></h2></Reveal><div className="experience-list">{experiences.map((experience, index) => <Reveal key={experience.company}><article className="experience-row"><div className="experience-num">0{index + 1}</div><div className="experience-main"><h3>{experience.company}</h3><p>{experience.role}{experience.project && <> · {experience.project}</>}</p></div><p className="experience-period">{experience.period}<br /><span>{experience.location}</span></p><div className="experience-detail"><ul>{experience.highlights.map(item => <li key={item}>{item}</li>)}</ul><div className="tags">{experience.technologies.map(tag => <span key={tag}>{tag}</span>)}</div></div></article></Reveal>)}</div></section>
+    <section className="architecture" id="architecture" aria-labelledby="architecture-title"><div className="shell"><Reveal><p className="section-index">03 / Frontend architecture</p><h2 id="architecture-title">Arquitectura para<br /><em>productos conectados.</em></h2><p className="architecture-intro">Experiencia profesional construyendo aplicaciones bancarias con una arquitectura Micro-Frontend y Webpack Module Federation.</p></Reveal><Reveal className="architecture-diagram"><div className="diagram-node core">React.js<br /><small>TypeScript</small></div><div className="diagram-line line-a" /><div className="diagram-line line-b" /><div className="diagram-line line-c" /><div className="diagram-node node-a">Microfrontends</div><div className="diagram-node node-b">Webpack</div><div className="diagram-node node-c">Module<br />Federation</div></Reveal></div></section>
+    <section className="section shell featured" aria-labelledby="featured-title"><Reveal><p className="section-index">04 / Experiencia destacada</p><h2 id="featured-title">Banca digital,<br /><em>dos contextos.</em></h2></Reveal><div className="featured-grid">{featuredExperiences.map((item, index) => <HoverCard className={`featured-card ${index === 0 ? "galicia" : "bbva"}`} key={item.client}><article><div className="card-number">0{index + 1}</div><p className="client-label">{item.label}</p><h3>{item.client}</h3><ul>{item.points.map(point => <li key={point}>{point}</li>)}</ul><div className="tags">{item.technologies.map(tag => <span key={tag}>{tag}</span>)}</div></article></HoverCard>)}</div></section>
+    <section className="section shell" id="stack" aria-labelledby="stack-title"><Reveal><p className="section-index">05 / Herramientas</p><h2 id="stack-title">Stack técnico<br /><em>en contexto.</em></h2></Reveal><div className="stack-grid">{skillGroups.map(group => <Reveal key={group.category}><article className="skill-group"><h3>{group.category}</h3><div>{group.skills.map(skill => <span key={skill}>{skill}</span>)}</div></article></Reveal>)}</div></section>
+    <section className="section shell" id="projects" aria-labelledby="projects-title"><Reveal><p className="section-index">06 / Selección</p><h2 id="projects-title">Proyectos y<br /><em>productos digitales.</em></h2></Reveal><div className="project-grid">{projects.map((project, index) => <HoverCard key={`${project.name}-${project.context}`} className="project-card"><article><div className="project-top"><span>0{index + 1}</span><span>{project.context}</span></div><h3>{project.name}</h3><p>{project.description}</p><div className="tags">{project.tags.map(tag => <span key={tag}>{tag}</span>)}</div></article></HoverCard>)}</div></section>
+    <section className="section shell education" id="education" aria-labelledby="education-title"><Reveal><p className="section-index">07 / Formación</p><h2 id="education-title">Aprendizaje<br /><em>en marcha.</em></h2></Reveal><div>{education.map(item => <Reveal key={`${item.institution}-${item.program}`}><article className="education-row"><div><h3>{item.institution}</h3><p>{item.program}</p></div><p>{item.period}<span>{item.location}</span></p></article></Reveal>)}</div></section>
+    <section className="contact" id="contact" aria-labelledby="contact-title"><div className="shell"><Reveal><p className="section-index">08 / Contacto</p><h2 id="contact-title">¿Construimos lo<br /><em>que sigue?</em></h2><p>Estoy disponible para conversar sobre oportunidades y productos digitales.</p><div className="contact-actions"><a className="button button-primary" href={`mailto:${profile.email}`}>Escribirme <Arrow /></a><a className="button button-ghost" href="/cv/camilo-gallego-cv.pdf" download>Descargar CV <span aria-hidden>↓</span></a></div></Reveal></div></section>
+    <footer className="shell"><span>© {new Date().getFullYear()} Camilo Gallego</span><div><a href={profile.linkedin} target="_blank" rel="noreferrer">LinkedIn <Arrow /></a><a href={`mailto:${profile.email}`}>Email <Arrow /></a></div></footer>
+  </main>;
 }
