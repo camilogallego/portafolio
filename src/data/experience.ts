@@ -11,14 +11,14 @@ export type Experience = {
 export const experiences: Experience[] = [
   {
     company: "Accenture",
-    role: "Ssr Software Engineer",
+    role: "Software Engineer",
     period: "Febrero 2022 - Presente",
     location: "Buenos Aires, Argentina",
     technologies: ["React.js", "TypeScript", "Microfrontends", "Webpack", "Module Federation", "AEM"],
     highlights: [
-      "Desarrollo de aplicaciones bancarias y sitios digitales para Galicia.",
-      "Gestión de despliegues en distintos ambientes, pruebas, validaciones y promoción a producción.",
-      "Desarrollo y mantenimiento de productos digitales bancarios para BBVA.",
+      "Desarrollo y evolución de aplicaciones bancarias productivas utilizando React.js, TypeScript y arquitectura Micro-Frontend.",
+      "Participación en el ciclo completo de entrega: desarrollo, integración, validación, despliegue y resolución de incidencias.",
+      "Implementación y mantenimiento de aplicaciones frontend integradas mediante Webpack Module Federation, junto con la evolución de productos bancarios en producción.",
     ],
   },
   {
@@ -28,8 +28,8 @@ export const experiences: Experience[] = [
     location: "Buenos Aires, Argentina",
     technologies: ["React.js", "Agile/Scrum"],
     highlights: [
-      "Desarrollo y mejora de funcionalidades para una plataforma AgTech.",
-      "Creación de componentes reutilizables y contribución a la evolución continua del producto.",
+      "Desarrollo y evolución de funcionalidades para una plataforma AgTech.",
+      "Creación de componentes reutilizables para acompañar la evolución continua del producto.",
       "Mantenimiento de funcionalidades existentes y resolución de incidencias.",
     ],
   },
@@ -41,7 +41,7 @@ export const experiences: Experience[] = [
     project: "ERP web para Saufer Soluciones",
     technologies: ["React.js"],
     highlights: [
-      "Desarrollo de interfaces, componentes reutilizables y funcionalidades orientadas a procesos internos.",
+      "Desarrollo de interfaces, componentes reutilizables y funcionalidades para procesos internos de un ERP web.",
     ],
   },
 ];
@@ -49,20 +49,20 @@ export const experiences: Experience[] = [
 export const featuredExperiences = [
   {
     client: "Galicia",
-    label: "Producto bancario en producción",
+    label: "Productos bancarios en producción",
     technologies: ["React.js", "TypeScript", "Microfrontends", "Webpack", "Module Federation", "AEM"],
     points: [
-      "Aplicaciones bancarias con React.js, TypeScript y arquitectura Micro-Frontend.",
-      "Home page y otros sitios digitales del banco, con integración a Adobe Experience Manager (AEM).",
-      "Despliegues entre ambientes, pruebas, validaciones, promoción a producción y resolución de incidencias.",
+      "Proyecto actual — Arquitectura Micro-Frontend: desarrollo y evolución de aplicaciones bancarias productivas utilizando React.js, TypeScript y Webpack Module Federation.",
+      "Proyecto anterior — Web bancaria y sitios digitales: participación en la home page y otros sitios digitales del banco con React.js y Adobe Experience Manager (AEM).",
+      "Integración entre aplicaciones, despliegues entre ambientes, pruebas, validaciones, promoción a producción y resolución de incidencias.",
     ],
   },
   {
     client: "BBVA",
-    label: "Producto bancario en producción",
+    label: "Evolución de producto bancario",
     technologies: ["LitElement", "Polymer"],
     points: [
-      "Desarrollo y mantenimiento de productos digitales con nuevas funcionalidades y componentes reutilizables.",
+      "Desarrollo y evolución de aplicaciones digitales bancarias, incorporando nuevas funcionalidades y componentes reutilizables en productos en producción.",
       "Mantenimiento evolutivo y resolución de incidencias en aplicaciones bancarias en producción.",
     ],
   },

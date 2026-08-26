@@ -1,8 +1,9 @@
 export const skillGroups = [
-  { category: "Frontend", skills: ["JavaScript", "TypeScript", "React.js", "Next.js", "LitElement", "Polymer", "Tailwind", "CSS"] },
+  { category: "Core Frontend", skills: ["JavaScript", "TypeScript", "React.js"] },
+  { category: "Architecture", skills: ["Microfrontends", "Webpack", "Module Federation"] },
+  { category: "Frontend", skills: ["Next.js", "Tailwind CSS", "LitElement", "Polymer", "CSS"] },
+  { category: "State / Data", skills: ["TanStack Query", "Zustand", "Jotai"] },
   { category: "Backend", skills: ["Node.js", "NestJS"] },
-  { category: "Data", skills: ["SQL", "Postgres", "MongoDB"] },
+  { category: "Data", skills: ["SQL", "PostgreSQL", "MongoDB"] },
   { category: "Cloud", skills: ["AWS"] },
-  { category: "State / Data", skills: ["Zustand", "Tanstack Query", "Jotai"] },
-  { category: "Architecture / Tooling", skills: ["Microfrontends", "Webpack", "Module Federation"] },
 ] as const;

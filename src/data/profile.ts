@@ -1,9 +1,9 @@
 export const profile = {
   name: "Camilo Gallego",
-  role: "Software Engineer / Frontend Developer",
+  role: "Software Engineer",
   location: "Buenos Aires, Argentina",
   summary:
-    "Software Engineer con más de 5 años de experiencia desarrollando productos digitales para el sector financiero, incluyendo soluciones para Banco Galicia y BBVA.",
+    "Desarrollo y evoluciono soluciones de software para productos digitales en producción, con especialización en frontend. Mi experiencia combina React.js, TypeScript y arquitecturas Micro-Frontend, participando en distintas etapas del ciclo de desarrollo: implementación, integración, validación, despliegue y evolución de aplicaciones. También cuento con experiencia en el sector financiero, en proyectos para Galicia y BBVA.",
   email: "camilogallego88@hotmail.com",
   linkedin: "https://www.linkedin.com/in/camilogallego88",
   label: "Software Engineer · Frontend",
